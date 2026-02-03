@@ -13,102 +13,142 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: radial-gradient(circle at top, #1a1b2f 0%, #0b0c15 60%, #07080f 100%);
             min-height: 100vh;
-            padding: 40px 20px;
-            color: #333;
+            padding: 48px 20px 80px;
+            color: #e6e6f0;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1180px;
             margin: 0 auto;
         }
 
         header {
-            text-align: center;
-            color: white;
-            margin-bottom: 60px;
-        }
-
-        h1 {
-            font-size: 3.5em;
-            margin-bottom: 15px;
-            font-weight: 700;
-            letter-spacing: -1px;
-        }
-
-        .subtitle {
-            font-size: 1.3em;
-            opacity: 0.95;
-            margin-bottom: 10px;
-        }
-
-        .tagline {
-            font-size: 1.1em;
-            opacity: 0.85;
-        }
-
-        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            gap: 14px;
+            justify-items: start;
+            padding: 32px 32px 40px;
+            background: rgba(20, 22, 38, 0.85);
+            border: 1px solid rgba(120, 130, 255, 0.2);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
             margin-bottom: 40px;
         }
 
-        .feature-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        h1 {
+            font-size: clamp(2.6em, 4vw, 3.4em);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #c7c8ff;
+        }
+
+        .tagline {
+            font-size: 1em;
+            color: #a4a6c8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+            margin-bottom: 48px;
+        }
+
+        .stat {
+            padding: 18px 20px;
+            background: rgba(20, 22, 38, 0.75);
+            border: 1px solid rgba(120, 130, 255, 0.16);
+            border-radius: 16px;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 6px;
+            color: #ffffff;
+        }
+
+        .stat-label {
+            font-size: 0.95em;
+            color: #a4a6c8;
+        }
+
+        .features-grid {
             display: flex;
             flex-direction: column;
+            gap: 32px;
+        }
+
+        .feature-card {
+            display: grid;
+            grid-template-columns: minmax(280px, 1fr) minmax(320px, 1.2fr);
+            gap: 0;
+            align-items: stretch;
+            background: rgba(15, 16, 28, 0.85);
+            border: 1px solid rgba(120, 130, 255, 0.2);
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .feature-card:nth-child(even) {
+            grid-template-columns: minmax(320px, 1.2fr) minmax(280px, 1fr);
         }
 
         .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 22px 60px rgba(88, 96, 195, 0.35);
         }
 
-        .feature-header {
-            padding: 25px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+        .feature-content {
+            padding: 28px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            justify-content: center;
         }
 
         .feature-header h3 {
             font-size: 1.5em;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            margin-bottom: 6px;
+            color: #ffffff;
         }
 
         .feature-description {
-            padding: 20px 25px;
-            font-size: 0.95em;
-            color: #666;
+            font-size: 1em;
+            color: #b8bad8;
             line-height: 1.6;
-            flex-grow: 1;
         }
 
-        .feature-image {
+        .feature-media {
+            background: #0b0c15;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .feature-image,
+        .feature-video {
             width: 100%;
-            height: 300px;
+            height: 100%;
             object-fit: cover;
-            background: #f5f5f5;
-        }
-
-        .feature-image:hover {
-            opacity: 0.9;
+            border-radius: 16px;
+            border: 1px solid rgba(120, 130, 255, 0.2);
         }
 
         footer {
             text-align: center;
-            color: white;
+            color: #9fa1c1;
             margin-top: 60px;
             padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .footer-text {
@@ -118,62 +158,34 @@
 
         .back-link {
             display: inline-block;
-            color: white;
+            color: #c7c8ff;
             text-decoration: none;
             padding: 10px 20px;
-            border: 2px solid white;
-            border-radius: 6px;
+            border: 1px solid rgba(120, 130, 255, 0.4);
+            border-radius: 10px;
             transition: all 0.3s ease;
-            margin-top: 20px;
+            margin-top: 16px;
         }
 
         .back-link:hover {
-            background: white;
-            color: #667eea;
+            background: rgba(120, 130, 255, 0.2);
+            color: #ffffff;
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5em;
+        @media (max-width: 960px) {
+            header {
+                justify-items: center;
+                text-align: center;
             }
 
-            .subtitle {
-                font-size: 1.1em;
-            }
-
-            .features-grid {
+            .feature-card,
+            .feature-card:nth-child(even) {
                 grid-template-columns: 1fr;
-                gap: 20px;
             }
 
-            .feature-image {
-                height: 250px;
+            .feature-media {
+                order: -1;
             }
-        }
-
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .stat {
-            text-align: center;
-            color: white;
-        }
-
-        .stat-number {
-            font-size: 2.5em;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            font-size: 0.95em;
-            opacity: 0.9;
         }
     </style>
 </head>
@@ -201,73 +213,143 @@
         </div>
 
         <div class="features-grid">
-            <!-- AI Code Completion -->
             <div class="feature-card">
-                <div class="feature-header">
-                    <h3>🤖 AI Code Completion</h3>
+                <div class="feature-content">
+                    <div class="feature-header">
+                        <h3>🤖 AI Code Completion</h3>
+                    </div>
+                    <div class="feature-description">
+                        Intelligent code suggestions powered by AI models like Gemini. Auto, manual, or mixed completion modes with smart debouncing.
+                    </div>
                 </div>
-                <div class="feature-description">
-                    Intelligent code suggestions powered by AI models like Gemini. Auto, manual, or mixed completion modes with smart debouncing.
+                <div class="feature-media">
+                    <img src="https://raw.githubusercontent.com/heckmon/code_forge/refs/heads/main/gifs/cf_ai.gif" alt="AI Code Completion" class="feature-image">
                 </div>
-                <img src="https://raw.githubusercontent.com/heckmon/code_forge/refs/heads/main/gifs/cf_ai.gif" alt="AI Code Completion" class="feature-image">
             </div>
 
-            <!-- LSP Integration -->
             <div class="feature-card">
-                <div class="feature-header">
-                    <h3>🔌 LSP Integration</h3>
+                <div class="feature-content">
+                    <div class="feature-header">
+                        <h3>🔌 LSP Integration</h3>
+                    </div>
+                    <div class="feature-description">
+                        Full Language Server Protocol support with real-time diagnostics, hover documentation, Code Actions and semantic highlighting.
+                    </div>
                 </div>
-                <div class="feature-description">
-                    Full Language Server Protocol support with real-time diagnostics, hover documentation, Code Actions and semantic highlighting.
+                <div class="feature-media">
+                    <img src="https://raw.githubusercontent.com/heckmon/code_forge/refs/heads/main/gifs/cf_lsp.gif" alt="LSP Integration" class="feature-image">
                 </div>
-                <img src="https://raw.githubusercontent.com/heckmon/code_forge/refs/heads/main/gifs/cf_lsp.gif" alt="LSP Integration" class="feature-image">
             </div>
 
-            <!-- Smart Code Folding -->
             <div class="feature-card">
-                <div class="feature-header">
-                    <h3>📁 Smart Code Folding</h3>
+                <div class="feature-content">
+                    <div class="feature-header">
+                        <h3>📁 Smart Code Folding</h3>
+                    </div>
+                    <div class="feature-description">
+                        Collapse and expand code blocks with visual indicators. Navigate large files with ease.
+                    </div>
                 </div>
-                <div class="feature-description">
-                    Collapse and expand code blocks with visual indicators. Navigate large files with ease.
+                <div class="feature-media">
+                    <img src="https://raw.githubusercontent.com/heckmon/code_forge/refs/heads/main/gifs/cf_fold.gif" alt="Smart Code Folding" class="feature-image">
                 </div>
-                <img src="https://raw.githubusercontent.com/heckmon/code_forge/refs/heads/main/gifs/cf_fold.gif" alt="Smart Code Folding" class="feature-image">
             </div>
 
-            <!-- Syntax Highlighting -->
             <div class="feature-card">
-                <div class="feature-header">
-                    <h3>🎨 Syntax Highlighting</h3>
+                <div class="feature-content">
+                    <div class="feature-header">
+                        <h3>🎨 Syntax Highlighting</h3>
+                    </div>
+                    <div class="feature-description">
+                        Beautiful syntax highlighting for 180+ languages with customizable themes and semantic token support.
+                    </div>
                 </div>
-                <div class="feature-description">
-                    Beautiful syntax highlighting for 180+ languages with customizable themes and semantic token support.
+                <div class="feature-media">
+                    <img src="https://raw.githubusercontent.com/heckmon/code_forge/refs/heads/main/gifs/cf_themes.gif" alt="Syntax Highlighting" class="feature-image">
                 </div>
-                <img src="https://raw.githubusercontent.com/heckmon/code_forge/refs/heads/main/gifs/cf_themes.gif" alt="Syntax Highlighting" class="feature-image">
             </div>
 
-            <!-- Search and Replace -->
             <div class="feature-card">
-                <div class="feature-header">
-                    <h3>🔍 Search and Replace</h3>
+                <div class="feature-content">
+                    <div class="feature-header">
+                        <h3>🔍 Search and Replace</h3>
+                    </div>
+                    <div class="feature-description">
+                        Search and replace words like in VSCode with intuitive keyboard shortcuts and visual highlighting.
+                    </div>
                 </div>
-                <div class="feature-description">
-                    Search and replace words like in VSCode with intuitive keyboard shortcuts and visual highlighting.
+                <div class="feature-media">
+                    <img src="https://raw.githubusercontent.com/heckmon/code_forge/refs/heads/main/gifs/findNreplace.gif" alt="Search and Replace" class="feature-image">
                 </div>
-                <img src="https://raw.githubusercontent.com/heckmon/code_forge/refs/heads/main/gifs/findNreplace.gif" alt="Search and Replace" class="feature-image">
             </div>
 
-            <!-- RTL Support -->
             <div class="feature-card">
-                <div class="feature-header">
-                    <h3>🌍 RTL Language Support</h3>
+                <div class="feature-content">
+                    <div class="feature-header">
+                        <h3>🌍 RTL Language Support</h3>
+                    </div>
+                    <div class="feature-description">
+                        Comprehensive support for right-to-left languages like Arabic and Hebrew with proper text alignment and navigation.
+                    </div>
                 </div>
-                <div class="feature-description">
-                    Comprehensive support for right-to-left languages like Arabic and Hebrew with proper text alignment and navigation.
+                <div class="feature-media">
+                    <video class="feature-video" controls>
+                        <source src="https://raw.githubusercontent.com/heckmon/code_forge_demo/main/gifs/RTL.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
-                <video width="555" height="555" controls style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                  <source src="https://raw.githubusercontent.com/heckmon/code_forge_demo/main/gifs/RTL.webm" type="video/webm">
-                  Your browser does not support the video tag.
-                </video>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-content">
+                    <div class="feature-header">
+                        <h3>💡 Inlay Hint Support</h3>
+                    </div>
+                    <div class="feature-description">
+                        LSP inlay hint that can be seen as customizable ghost text.
+                        It can be invoked via Ctrl + Alt or controller.showInlayHints().
+                    </div>
+                </div>
+                <div class="feature-media">
+                    <video class="feature-video" controls>
+                        <source src="https://raw.githubusercontent.com/heckmon/code_forge_demo/main/gifs/inlay_hint.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-content">
+                    <div class="feature-header">
+                        <h3>📑 Document highlighting</h3>
+                    </div>
+                    <div class="feature-description">
+                        LSP Document highlighting highlights all occurrences of a text on placing the cursor above any instances of the corresponding text.
+                    </div>
+                </div>
+                <div class="feature-media">
+                    <video class="feature-video" controls>
+                        <source src="https://raw.githubusercontent.com/heckmon/code_forge_demo/main/gifs/document_highlight.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-content">
+                    <div class="feature-header">
+                        <h3>🎨 Color picker</h3>
+                    </div>
+                    <div class="feature-description">
+                        Color picker for supported languages like CSS, dart, etc.
+                    </div>
+                </div>
+                <div class="feature-media">
+                    <video class="feature-video" controls>
+                        <source src="https://raw.githubusercontent.com/heckmon/code_forge_demo/main/gifs/color_picker.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </div>
         </div>
 
